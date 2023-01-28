@@ -1,7 +1,16 @@
-pwix:bootbox
+# pwix:bootbox
 
-Synoptic
+## What is it ?
 
+A thin package for Meteor which encapsulates the creation and the display of modal dialogs:
+- either as an `alert` dialog, which just display a message and waits for an aknowledgement of the user,
+- or a `confirm` dialog, which waits for a Yes|No decision of the user.
+
+Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can be moved by the user.
+
+### Usage
+
+```
     import { bbBootbox } from 'meteor/pwix:bootbox';
 
     alert()
@@ -50,8 +59,8 @@ Synoptic
         }, ( res ) => {
             rest = true|false
         });
+```
 
-As of 1.3.0, modal boxes become moveable by the user.
 ---
 P. Wieser
 - Last updated on 2023, Jan. 27th
