@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse( function( api ){
     configure( api );
     api.export([
-        'bbBootbox'
+        'pwixBootbox'
     ]);
     api.mainModule( 'src/client/js/index.js', 'client' );
 });

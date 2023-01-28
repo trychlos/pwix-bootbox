@@ -2,9 +2,9 @@
  * /src/common/js/config.js
  */
 
-//console.log( 'pwix:bootbox/src/common/js/config.js defining globally exported bbBootbox object' );
+//console.log( 'pwix:bootbox/src/common/js/config.js defining globally exported pwixBootbox object' );
 
-bbBootbox = {
+pwixBootbox = {
     // client-specific data and functions
     client: {},
 
@@ -14,8 +14,8 @@ bbBootbox = {
     // should be *in same terms* called both by the client and the server
     configure: function( o ){
         console.log( 'pwix:bootbox configure() with', o );
-        bbBootbox.conf = {
-            ...bbBootbox.conf,
+        pwixBootbox.conf = {
+            ...pwixBootbox.conf,
             ...o
         };
     },

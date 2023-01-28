@@ -27,7 +27,7 @@ Template.bb_alert.helpers({
         return Template.currentData().message || '';
     },
     button(){
-        return Template.currentData().btn || i18n.label( bbBootbox.i18n, 'alert.ok_btn' );
+        return Template.currentData().btn || i18n.label( pwixBootbox.i18n, 'alert.ok_btn' );
     },
     title(){
         return Template.currentData().title || '';

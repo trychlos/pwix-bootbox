@@ -2,7 +2,7 @@
  * pwix:bootbox/src/common/js/i18n.js
  */
 
-bbBootbox.i18n = {
+pwixBootbox.i18n = {
     'en_US': {
         alert: {
             ok_btn: 'OK'
