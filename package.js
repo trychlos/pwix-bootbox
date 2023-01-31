@@ -28,7 +28,7 @@ function configure( api ){
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
     api.use( 'pwix:i18n@1.0.0' );
-    api.use( 'tmeasday:check-npm-versions@1.0.2' );
+    api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
 }
 
 // NPM dependencies are checked in /src/server/js/check_npms.js
