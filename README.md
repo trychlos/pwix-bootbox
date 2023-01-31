@@ -1,4 +1,4 @@
-# pwix:bootbox
+# pwix:bootbox - README
 
 ## What is it ?
 
@@ -63,19 +63,25 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
 
 ## NPM peer dependencies
 
-Starting with v 1.1.0, we no more hardcode NPM dependencies in the `Npm.depends` clause of the `package.json`. Cf. the [Meteor Guide](https://guide.meteor.com/writing-atmosphere-packages.html#npm-dependencies).
+Starting with v 1.1.0, and in accordance with advices from [the Meteor Guide](https://guide.meteor.com/writing-atmosphere-packages.html#npm-dependencies), we no more hardcode NPM dependencies in the `Npm.depends` clause of the `package.js`. 
+
 Instead we check npm versions of installed packages at runtime, on server startup, in development environment.
 
 Dependencies as of v 1.1.0:
-- @popperjs/core, starting with v 2.11,
-- bootstrap, starting with v 5.2,
-- jquery-ui-dist, starting with v 1.13.
-
+```
+    @popperjs/core, starting with v 2.11,
+    bootstrap, starting with v 5.2,
+    jquery-ui-dist, starting with v 1.13.
+```
 Each of these dependencies should be installed at application level:
 ```
     meteor npm install <package> --save
 ```
 
+## Translations
+
+New and updated translations are willingly accepted, and more than welcome. Just be kind enough to submit a PR on the [Github repository](https://github.com/trychlos/pwix-bootbox/pulls).
+
 ---
 P. Wieser
-- Last updated on 2023, Jan. 27th
+- Last updated on 2023, Feb. 2nd

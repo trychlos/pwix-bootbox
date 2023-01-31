@@ -1,5 +1,5 @@
 /*
- * /src/common/js/config.js
+ * pwix:bootbox/src/common/js/config.js
  */
 
 //console.log( 'pwix:bootbox/src/common/js/config.js defining globally exported pwixBootbox object' );
