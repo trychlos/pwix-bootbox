@@ -6,6 +6,8 @@ import { pwixI18n as i18n } from 'meteor/pwix:i18n';
 
 import '../../../common/js/index.js';
 
+import '../../stylesheets/bb_bootbox.less';
+
 import './bb_confirm.html';
 
 Template.bb_confirm.onCreated( function(){
@@ -57,16 +59,14 @@ Template.bb_confirm.onCreated( function(){
 
 Template.bb_confirm.onRendered( function(){
     this.$( '.bb-confirm .modal' ).modal( 'show' );
-    /*
-    this.$( '.bb-confirm .modal' ).modal({
-        backdrop: false,
-        show: true
-    });
-    */
+
     this.$( '.bb-confirm .modal-dialog' ).draggable({
         handle: '.modal-header',
         cursor: 'grab'
     });
+
+    // add a tag class to body element to let the stylesheet identify *this* modal
+    $( 'body' ).addClass( 'bbBootbox-bbConfirm-class' );
 });
 
 Template.bb_confirm.helpers({
@@ -95,6 +95,7 @@ Template.bb_confirm.events({
 
     // remove the Blaze element from the DOM
     'hidden.bs.modal .bb-confirm'( event, instance ){
+        $( 'body' ).removeClass( 'bbBootbox-bbConfirm-class' );
         Blaze.remove( instance.view );
     }
 });
