@@ -1,4 +1,4 @@
-# pwix:bootbox - README
+# pwix:bootbox
 
 ## What is it ?
 
@@ -60,6 +60,10 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
             rest = true|false
         });
 ```
+
+## Configuration
+
+None at the moment.
 
 ## NPM peer dependencies
 
