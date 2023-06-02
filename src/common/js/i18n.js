@@ -29,3 +29,6 @@ pwixBootbox.i18n = {
         }
     }
 };
+
+pwixBootbox.i18n.en = pwixBootbox.i18n.en_US;
+pwixBootbox.i18n.fr = pwixBootbox.i18n.fr_FR;

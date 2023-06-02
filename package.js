@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:bootbox',
-    version: '1.1.2-rc',
+    version: '1.2.0-rc',
     summary: 'Bootstrap-based alert() and confirm() dialogs, so a client-only Meteor package',
     git: 'https://github.com/trychlos/pwix-bootbox',
     documentation: 'README.md'
@@ -27,7 +27,7 @@ function configure( api ){
     api.use( 'blaze-html-templates@2.0.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:i18n@1.0.0' );
+    api.use( 'pwix:i18n@1.3.2' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
 }
 
