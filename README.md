@@ -71,12 +71,13 @@ Starting with v 1.1.0, and in accordance with advices from [the Meteor Guide](ht
 
 Instead we check npm versions of installed packages at runtime, on server startup, in development environment.
 
-Dependencies as of v 1.1.0:
+Dependencies as of v 1.2.0:
 ```
-    @popperjs/core, starting with v 2.11,
-    bootstrap, starting with v 5.2,
-    jquery-ui-dist, starting with v 1.13.
+    '@popperjs/core': '^2.11.6',
+    'bootstrap': '^5.2.1',
+    'jquery-ui-dist': '^1.13.2'
 ```
+
 Each of these dependencies should be installed at application level:
 ```
     meteor npm install <package> --save
@@ -88,4 +89,4 @@ New and updated translations are willingly accepted, and more than welcome. Just
 
 ---
 P. Wieser
-- Last updated on 2023, Feb. 2nd
+- Last updated on 2023, June 8th
