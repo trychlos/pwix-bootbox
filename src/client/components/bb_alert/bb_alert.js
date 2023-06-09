@@ -36,6 +36,13 @@ Template.bb_alert.helpers({
 
 Template.bb_alert.events({
 
+    // when clicking on the button, call the callback if any
+    'click .js-close'( event, instance ){
+        if( Template.currentData().cb ){
+            Template.currentData().cb();
+        }
+    },
+
     // remove the Blaze element from the DOM
     'hidden.bs.modal .bb-alert'( event, instance ){
         $( 'body' ).removeClass( 'bbBootbox-bbAlert-class' );
