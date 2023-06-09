@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.3.0-rc
+### 1.3.0
 
-    Release date: 
+    Release date: 2023- 6- 9
 
     - pwixBootbox.alert() now accepts a callback
 
@@ -35,4 +35,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, June 8th
+- Last updated on 2023, June 9th
