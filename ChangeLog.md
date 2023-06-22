@@ -2,6 +2,12 @@
 
 ## ChangeLog
 
+### 1.3.1-rc
+
+    Release date: 
+
+    - Replace jquery-ui-dist requirement with standard jquery-ui
+
 ### 1.3.0
 
     Release date: 2023- 6- 9

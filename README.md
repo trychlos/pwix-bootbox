@@ -78,7 +78,7 @@ Dependencies as of v 1.2.0:
 ```
     '@popperjs/core': '^2.11.6',
     'bootstrap': '^5.2.1',
-    'jquery-ui-dist': '^1.13.2'
+    'jquery-ui': '^1.13.2'
 ```
 
 Each of these dependencies should be installed at application level:
