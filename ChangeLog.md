@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.3.1-rc
+### 1.4.0
 
-    Release date: 
+    Release date: 2023- 6-22
 
     - Replace jquery-ui-dist requirement with standard jquery-ui
     - Define pwixBootbox.i18n.namespace() to get the i18n namespace of the package (todo #2)
@@ -42,4 +42,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, June 9th
+- Last updated on 2023, June 22nd
