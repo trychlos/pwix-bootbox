@@ -5,4 +5,3 @@
 import '../../common/js/index.js';
 
 import './bootbox.js';
-import './startup.js';

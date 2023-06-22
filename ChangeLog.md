@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Remove superfluous call to pwixI18n.namespace() at client startup
 
 ### 1.4.0
 
