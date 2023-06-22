@@ -7,6 +7,7 @@
     Release date: 
 
     - Replace jquery-ui-dist requirement with standard jquery-ui
+    - Define pwixBootbox.i18n.namespace() to get the i18n namespace of the package (todo #2)
 
 ### 1.3.0
 

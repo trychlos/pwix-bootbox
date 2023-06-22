@@ -2,7 +2,7 @@
  * pwix:bootbox:/src/client/components/bb_alert/bb_alert.js
  */
 
-import { pwixI18n as i18n } from 'meteor/pwix:i18n';
+import { pwixI18n } from 'meteor/pwix:i18n';
 
 import '../../../common/js/index.js';
 
@@ -27,7 +27,7 @@ Template.bb_alert.helpers({
         return Template.currentData().message || '';
     },
     button(){
-        return Template.currentData().btn || i18n.label( pwixBootbox.i18n, 'alert.ok_btn' );
+        return Template.currentData().btn || pwixI18n.label( I18N, 'alert.ok_btn' );
     },
     title(){
         return Template.currentData().title || '';
