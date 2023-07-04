@@ -4,7 +4,7 @@
 
 import { pwixI18n } from 'meteor/pwix:i18n';
 
-pwixBootbox.i18n = {
+Bootbox.i18n = {
     'en_US': {
         alert: {
             ok_btn: 'OK'
@@ -32,14 +32,14 @@ pwixBootbox.i18n = {
     }
 };
 
-pwixBootbox.i18n.en = pwixBootbox.i18n.en_US;
-pwixBootbox.i18n.fr = pwixBootbox.i18n.fr_FR;
+Bootbox.i18n.en = Bootbox.i18n.en_US;
+Bootbox.i18n.fr = Bootbox.i18n.fr_FR;
 
-pwixI18n.namespace( I18N, pwixBootbox.i18n );
+pwixI18n.namespace( I18N, Bootbox.i18n );
 
 /**
  * @returns {String} the i18n namespace of this package
  */
-pwixBootbox.i18n.namespace = function(){
+Bootbox.i18n.namespace = function(){
     return I18N;
 };

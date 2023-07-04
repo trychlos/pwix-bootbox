@@ -13,18 +13,18 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
 ## Usage
 
 ```
-    import { pwixBootbox } from 'meteor/pwix:bootbox';
+    import { Bootbox } from 'meteor/pwix:bootbox';
 
     alert()
 
-        pwixBootbox.alert( message );
+        Bootbox.alert( message );
 
             no title
             btn: OK
 
         or
 
-        pwixBootbox.alert({
+        Bootbox.alert({
             title: title,
             message: message,
             btn: text,
@@ -33,7 +33,7 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
 
     confirm()
 
-        pwixBootbox.confirm( message, ( res ) => {
+        Bootbox.confirm( message, ( res ) => {
             rest = true|false
         });
 
@@ -44,7 +44,7 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
 
         or
 
-        pwixBootbox.confirm({
+        Bootbox.confirm({
             title: title,
             message: message,
             btn_true: text,
@@ -55,7 +55,7 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
 
         or
 
-        pwixBootbox.confirm({
+        Bootbox.confirm({
             title: title,
             message: message,
             btns_family: YESNO | OKCANCEL | OKCLOSE

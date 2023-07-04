@@ -14,7 +14,7 @@ import '../components/bb_confirm/bb_confirm.js';
  *  - message: dialog message, defaulting to empty
  *  - btn: button text, defaulting to 'OK'
  */
-pwixBootbox.alert = function(){
+Bootbox.alert = function(){
     //console.log( 'bb.alert()', arguments );
     if( arguments.length >= 1 ){
         let args = {};
@@ -49,7 +49,7 @@ pwixBootbox.alert = function(){
  *  - btn_family: type de buttons YESNO, OKCANCEL or OKCLOSE
  * @param {Functions} cb a callback function which will be invoked with a boolean true if OK, or false if Cancel
  */
-pwixBootbox.confirm = function(){
+Bootbox.confirm = function(){
     if( arguments.length >= 2 ){
         let args = {};
         if( typeof arguments[0] === 'string' ){

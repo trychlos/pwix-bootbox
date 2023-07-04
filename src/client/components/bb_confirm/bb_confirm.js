@@ -44,14 +44,14 @@ Template.bb_confirm.onCreated( function(){
             if( data.btns_family && Object.keys( this.bb.families ).includes( data.btns_family )){
                 const key = self.BB.family( data.btns_family )[type];
                 if( key ){
-                    return i18n.label( pwixBootbox.i18n, 'confirm.'+key );
+                    return i18n.label( Bootbox.i18n, 'confirm.'+key );
                 }
             }
             if( type === 'true' ){
-                return i18n.label( pwixBootbox.i18n, 'confirm.ok_btn' );
+                return i18n.label( Bootbox.i18n, 'confirm.ok_btn' );
             }
             if( type === 'false' ){
-                return i18n.label( pwixBootbox.i18n, 'confirm.cancel_btn' );
+                return i18n.label( Bootbox.i18n, 'confirm.cancel_btn' );
             }
         }
     };
