@@ -11,7 +11,8 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    1 | 2023- 5-29 | Relies on pwix:modal |
-|    3 |  |  |
+|    3 | 2023- 7- 4 | clicking in the backdrop shouldnt't not close the dialogs |
+|    4 |  |  |
 
 ---
 ## Done
