@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.0-rc
+### 1.5.0
 
-    Release date: 
+    Release date: 2023- 7- 4
 
     - Remove superfluous call to pwixI18n.namespace() at client startup
     - Rename globally exported pwixBootbox to Bootbox (bumping candidate version number)
@@ -49,4 +49,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, June 22nd
+- Last updated on 2023, July 4th
