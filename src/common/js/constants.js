@@ -24,32 +24,32 @@ Bootbox.C = {
 Bootbox._btnDefs = {
     OKCANCEL: [
         {
-            btn: Modal.C.Button.CANCEL,
-            res: false
+            id: Modal.C.Button.CANCEL,
+            result: false
         },
         {
-            btn: Modal.C.Button.OK,
-            res: true
+            id: Modal.C.Button.OK,
+            result: true
         }
     ],
     OKCLOSE: [
         {
-            btn: Modal.C.Button.CLOSE,
-            res: false
+            id: Modal.C.Button.CLOSE,
+            result: false
         },
         {
-            btn: Modal.C.Button.OK,
-            res: true
+            id: Modal.C.Button.OK,
+            result: true
         }
     ],
     YESNO: [
         {
-            btn: Modal.C.Button.NO,
-            res: false
+            id: Modal.C.Button.NO,
+            result: false
         },
         {
-            btn: Modal.C.Button.YES,
-            res: true
+            id: Modal.C.Button.YES,
+            result: true
         }
     ]
 };

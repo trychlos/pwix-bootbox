@@ -35,22 +35,22 @@ Template.bb_dialog.onCreated( function(){
         button( type ){
             const data = Template.currentData();
             if( type === 'true' && data.btn_true ){
-                return data.btn_true;
+                return { id: Modal.C.Button.OK, label: data.btn_true, result: true };
             }
             if( type === 'false' && data.btn_false ){
-                return data.btn_false;
+                return { id: Modal.C.Button.CANCEL, label: data.btn_false, result: false };
             }
             if( data.btns_family && Object.keys( Bootbox.C.Family ).includes( data.btns_family )){
                 const btn = self.BB.findBtn( data.btns_family, type );
                 if( btn ){
-                    return btn.btn;
+                    return btn;
                 }
             }
             if( type === 'true' ){
-                return Modal.C.Button.OK;
+                return { id: Modal.C.Button.OK, result: true };
             }
             if( type === 'false' ){
-                return Modal.C.Button.CANCEL;
+                return { id: Modal.C.Button.CANCEL, result: false };
             }
         },
 
@@ -60,7 +60,7 @@ Template.bb_dialog.onCreated( function(){
             Object.keys( Bootbox._btnDefs ).every(( f ) => {
                 if( f === family ){
                     Bootbox._btnDefs[f].every(( btn ) => {
-                        if( btn.res.toString() === type ){
+                        if( btn.result.toString() === type ){
                             found = btn;
                             return false;
                         }
@@ -115,9 +115,9 @@ Template.bb_dialog.events({
     'md-click .bb-dialog'( event, instance, data ){
         //console.debug( event, data );
         if( Template.currentData().bootbox === Bootbox.C.Calling.CONFIRM ){
-                switch( data.button ){
-
-                }
+            if( Template.currentData().cb ){
+                Template.currentData().cb( data && data.btnObj ? data.btnObj.result : null );
+            }
         }
     },
 
