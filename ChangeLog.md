@@ -6,7 +6,8 @@
 
     Release date: 
 
-    - 
+    - Now relies on pwix:modal (todo #1)
+    - Clicking on the backdrop no more close the dialogs (todo #3)
 
 ### 1.5.0
 

@@ -1,8 +1,12 @@
 /*
  * pwix:bootbox/src/client/js/bootbox.js
  */
-import '../components/bb_alert/bb_alert.js';
-import '../components/bb_confirm/bb_confirm.js';
+
+import { Modal } from 'meteor/pwix:modal';
+
+import _ from 'lodash';
+
+import '../components/bb_dialog/bb_dialog.js';
 
 /**
  * Display a message with a single button to acknowledge the dialog
@@ -13,17 +17,23 @@ import '../components/bb_confirm/bb_confirm.js';
  *  - title: dialog title, defaulting to empty
  *  - message: dialog message, defaulting to empty
  *  - btn: button text, defaulting to 'OK'
+ *  - cb: a function called when the user clicks the 'OK' button
  */
 Bootbox.alert = function(){
     //console.log( 'bb.alert()', arguments );
     if( arguments.length >= 1 ){
         let args = {};
-        if( typeof arguments[0] === 'string' ){
+        if( _.isString( arguments[0] )){
             args.message = arguments[0];
         } else {
             args = { ...arguments[0] };
         }
-        Blaze.renderWithData( Template.bb_alert, args, $( 'body' )[0] );
+        Modal.run({
+            mdBody: 'bb_dialog',
+            mdCloseByBackdrop: false,
+            bootbox: Bootbox.C.Calling.ALERT,
+            ...args
+        });
     } else {
         console.error( 'pwix:bootbox/alert() expects (at least) one argument' );
     }
@@ -52,13 +62,18 @@ Bootbox.alert = function(){
 Bootbox.confirm = function(){
     if( arguments.length >= 2 ){
         let args = {};
-        if( typeof arguments[0] === 'string' ){
+        if( _.isString( arguments[0] )){
             args.message = arguments[0];
         } else {
             args = { ...arguments[0] };
         }
         args.cb = arguments[1];
-        Blaze.renderWithData( Template.bb_confirm, args, $( 'body' )[0] );
+        Modal.run({
+            mdBody: 'bb_dialog',
+            mdCloseByBackdrop: false,
+            bootbox: Bootbox.C.Calling.CONFIRM,
+            ...args
+        });
     } else {
         console.error( 'pwix:bootbox/confirm() expects two arguments' );
     }

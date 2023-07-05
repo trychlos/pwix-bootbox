@@ -8,7 +8,7 @@ A thin package for Meteor which encapsulates the creation and the display of mod
 
 - or a `confirm` dialog, which waits for a Yes|No decision of the user.
 
-Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can be moved by the user.
+Thanks to the [pwix:modal](https://github.com/trychlos/pwix-modal/) package, the dialogs are draggable, and can be moved by the user.
 
 ## Usage
 
@@ -34,7 +34,7 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
     confirm()
 
         Bootbox.confirm( message, ( res ) => {
-            rest = true|false
+            res = true|false
         });
 
             no title
@@ -50,7 +50,7 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
             btn_true: text,
             btn_false: text
         }, ( res ) => {
-            rest = true|false
+            res = true|false
         });
 
         or
@@ -58,11 +58,13 @@ Thanks to [jQuery UI](https://jqueryui.com/), the dialogs are draggable, and can
         Bootbox.confirm({
             title: title,
             message: message,
-            btns_family: YESNO | OKCANCEL | OKCLOSE
+            btns_family: Bootbox.C.Family.YESNO | Bootbox.C.Family.OKCANCEL | Bootbox.C.Family.OKCLOSE
         }, ( res ) => {
-            rest = true|false
+            res = true|false
         });
 ```
+
+Note that provided arguments are directly passed to `Modal.run()` method. You may so configure the opened modal as you want. See the `pwix:modal` documentation.
 
 ## Configuration
 
