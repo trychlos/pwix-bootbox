@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.1-rc
+### 1.5.1
 
-    Release date: 
+    Release date: 2023- 9-11
 
     - Now relies on pwix:modal v 1.6.0 (todo #1)
     - Clicking on the backdrop no more close the dialogs (todo #3)
@@ -58,4 +58,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, July 4th
+- Last updated on 2023, Sept. 11th
