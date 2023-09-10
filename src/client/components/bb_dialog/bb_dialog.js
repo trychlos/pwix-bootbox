@@ -79,11 +79,11 @@ Template.bb_dialog.onRendered( function(){
     const self = this;
 
     // set the events target
-    Modal.target({ target: $(' .bb-dialog' ) });
+    Modal.set({ target: $(' .bb-dialog' ) });
 
     // set the title
     self.autorun(() => {
-        Modal.setTitle( Template.currentData().title || '' );
+        Modal.set({ title: Template.currentData().title || '' });
     });
 
     // set the buttons

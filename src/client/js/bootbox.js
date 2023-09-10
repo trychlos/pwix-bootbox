@@ -60,6 +60,7 @@ Bootbox.alert = function(){
  * @param {Functions} cb a callback function which will be invoked with a boolean true if OK, or false if Cancel
  */
 Bootbox.confirm = function(){
+    //console.debug( arguments );
     if( arguments.length >= 2 ){
         let args = {};
         if( _.isString( arguments[0] )){
