@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Update to pwix:modal 1.8.0
 
 ### 1.5.2
 
@@ -20,7 +20,7 @@
 
     - Now relies on pwix:modal v 1.6.0 (todo #1)
     - Clicking on the backdrop no more close the dialogs (todo #3)
-    - Update to pwix-modal 1.7.0 et set version requirement
+    - Update to pwix-modal 1.7.0 and set version requirement
     - Bump Meteor version requirement
 
 ### 1.5.0

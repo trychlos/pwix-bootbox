@@ -16,18 +16,45 @@ Template.bb_dialog.onCreated( function(){
 
     self.BB = {
         families: {
-            YESNO : {
-                'true': Modal.C.Button.YES,
-                'false': Modal.C.Button.NO
-            },
-            OKCANCEL: {
-                'true': Modal.C.Button.OK,
-                'false': Modal.C.Button.CANCEL
-            },
-            OKCLOSE: {
-                'true': Modal.C.Button.OK,
-                'false': Modal.C.Button.CLOSE
-            }
+            OKCANCEL: [
+                {
+                    id: Modal.C.Button.CANCEL,
+                    dismiss: true,
+                    result: false
+                },
+                {
+                    id: Modal.C.Button.OK,
+                    dismiss: true,
+                    type: 'submit',
+                    result: true
+                }
+            ],
+            OKCLOSE: [
+                {
+                    id: Modal.C.Button.CLOSE,
+                    dismiss: true,
+                    result: false
+                },
+                {
+                    id: Modal.C.Button.OK,
+                    dismiss: true,
+                    type: 'submit',
+                    result: true
+                }
+            ],
+            YESNO: [
+                {
+                    id: Modal.C.Button.NO,
+                    dismiss: true,
+                    result: false
+                },
+                {
+                    id: Modal.C.Button.YES,
+                    dismiss: true,
+                    type: 'submit',
+                    result: true
+                }
+            ]
         },
 
         // type = 'true'|'false'
@@ -35,10 +62,10 @@ Template.bb_dialog.onCreated( function(){
         button( type ){
             const data = Template.currentData();
             if( type === 'true' && data.btn_true ){
-                return { id: Modal.C.Button.OK, label: data.btn_true, result: true };
+                return { id: Modal.C.Button.OK, label: data.btn_true, type: 'submit', dismiss: true, result: true };
             }
             if( type === 'false' && data.btn_false ){
-                return { id: Modal.C.Button.CANCEL, label: data.btn_false, result: false };
+                return { id: Modal.C.Button.CANCEL, label: data.btn_false, dismiss: true, result: false };
             }
             if( data.btns_family && Object.keys( Bootbox.C.Family ).includes( data.btns_family )){
                 const btn = self.BB.findBtn( data.btns_family, type );
@@ -47,29 +74,24 @@ Template.bb_dialog.onCreated( function(){
                 }
             }
             if( type === 'true' ){
-                return { id: Modal.C.Button.OK, result: true };
+                return { id: Modal.C.Button.OK, type: 'submit', dismiss: true, result: true };
             }
             if( type === 'false' ){
-                return { id: Modal.C.Button.CANCEL, result: false };
+                return { id: Modal.C.Button.CANCEL, dismiss: true, result: false };
             }
         },
 
         // search for the type button in the family
         findBtn( family, type ){
             let found = null;
-            Object.keys( Bootbox._btnDefs ).every(( f ) => {
-                if( f === family ){
-                    Bootbox._btnDefs[f].every(( btn ) => {
-                        if( btn.result.toString() === type ){
-                            found = btn;
-                            return false;
-                        }
-                        return true;
-                    });
-                    return false;
-                }
-                return true;
-            });
+            if( Object.keys( self.BB.families ).includes( family )){
+                self.BB.families[family].every(( btn ) => {
+                    if( btn.result.toString() === type ){
+                        found = btn;
+                    }
+                    return found === null;
+                });
+            }
             return found;
         }
     };
@@ -79,44 +101,42 @@ Template.bb_dialog.onRendered( function(){
     const self = this;
 
     // set the events target
-    Modal.set({ target: $(' .bb-dialog' ) });
+    Modal.set({ target: self.$(' .bb-dialog' ) });
+
+    // set the buttons
+    switch( Template.currentData().bootbox ){
+        case Bootbox.C.Calling.ALERT:
+            if( Template.currentData().btn ){
+                Modal.set({ buttons: { id: Modal.C.Button.OK, label: Template.currentData().btn }});    
+            }
+            break;
+        case Bootbox.C.Calling.CONFIRM:
+            Modal.set({ buttons: [
+                self.BB.button( 'false' ),
+                self.BB.button( 'true' ),
+            ]});
+            break;
+    };
 
     // set the title
     self.autorun(() => {
         Modal.set({ title: Template.currentData().title || '' });
     });
-
-    // set the buttons
-    self.autorun(() => {
-        switch( Template.currentData().bootbox ){
-            case Bootbox.C.Calling.ALERT:
-                if( Template.currentData().btn ){
-                    Modal.setButtons({ id: Modal.C.Button.OK, label: Template.currentData().btn });    
-                }
-                break;
-            case Bootbox.C.Calling.CONFIRM:
-                Modal.setButtons([
-                    self.BB.button( 'false' ),
-                    self.BB.button( 'true' ),
-                ]);
-                break;
-        }
-    });
 });
 
 Template.bb_dialog.helpers({
     body(){
-        return Template.currentData().message || '';
+        return this.message || '';
     }
 });
 
 Template.bb_dialog.events({
     // when clicking on the button, call the callback if any
     'md-click .bb-dialog'( event, instance, data ){
-        //console.debug( event, data );
-        if( Template.currentData().bootbox === Bootbox.C.Calling.CONFIRM ){
-            if( Template.currentData().cb ){
-                Template.currentData().cb( data && data.btnObj ? data.btnObj.result : null );
+        //console.debug( event, data, this );
+        if( this.bootbox === Bootbox.C.Calling.CONFIRM ){
+            if( this.cb ){
+                this.cb( data.button.parms.result );
             }
         }
     },

@@ -21,37 +21,5 @@ Bootbox.C = {
 };
 
 // private
-Bootbox._btnDefs = {
-    OKCANCEL: [
-        {
-            id: Modal.C.Button.CANCEL,
-            result: false
-        },
-        {
-            id: Modal.C.Button.OK,
-            result: true
-        }
-    ],
-    OKCLOSE: [
-        {
-            id: Modal.C.Button.CLOSE,
-            result: false
-        },
-        {
-            id: Modal.C.Button.OK,
-            result: true
-        }
-    ],
-    YESNO: [
-        {
-            id: Modal.C.Button.NO,
-            result: false
-        },
-        {
-            id: Modal.C.Button.YES,
-            result: true
-        }
-    ]
-};
 
 I18N = "pwix:bootbox:i18n:namespace";
