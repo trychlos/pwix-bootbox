@@ -25,7 +25,6 @@ Template.bb_dialog.onCreated( function(){
                 {
                     id: Modal.C.Button.OK,
                     dismiss: true,
-                    type: 'submit',
                     result: true
                 }
             ],
@@ -38,7 +37,6 @@ Template.bb_dialog.onCreated( function(){
                 {
                     id: Modal.C.Button.OK,
                     dismiss: true,
-                    type: 'submit',
                     result: true
                 }
             ],
@@ -51,7 +49,6 @@ Template.bb_dialog.onCreated( function(){
                 {
                     id: Modal.C.Button.YES,
                     dismiss: true,
-                    type: 'submit',
                     result: true
                 }
             ]
@@ -62,7 +59,7 @@ Template.bb_dialog.onCreated( function(){
         button( type ){
             const data = Template.currentData();
             if( type === 'true' && data.btn_true ){
-                return { id: Modal.C.Button.OK, label: data.btn_true, type: 'submit', dismiss: true, result: true };
+                return { id: Modal.C.Button.OK, label: data.btn_true, dismiss: true, result: true };
             }
             if( type === 'false' && data.btn_false ){
                 return { id: Modal.C.Button.CANCEL, label: data.btn_false, dismiss: true, result: false };
@@ -74,7 +71,7 @@ Template.bb_dialog.onCreated( function(){
                 }
             }
             if( type === 'true' ){
-                return { id: Modal.C.Button.OK, type: 'submit', dismiss: true, result: true };
+                return { id: Modal.C.Button.OK, dismiss: true, result: true };
             }
             if( type === 'false' ){
                 return { id: Modal.C.Button.CANCEL, dismiss: true, result: false };
