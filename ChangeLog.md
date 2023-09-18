@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.3-rc
+### 1.5.3
 
-    Release date: 
+    Release date: 2023- 9-18
 
     - Update to pwix:modal 1.8.0
 
@@ -70,4 +70,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, Sept. 12th
+- Last updated on 2023, Sep. 18th

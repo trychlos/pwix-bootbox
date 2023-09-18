@@ -78,9 +78,7 @@ Instead we check npm versions of installed packages at runtime, on server startu
 
 Dependencies as of v 1.5.0:
 ```
-    '@popperjs/core': '^2.11.6',
-    'bootstrap': '^5.2.1',
-    'jquery-ui': '^1.13.2'
+    'lodash': '^4.17.21'
 ```
 
 Each of these dependencies should be installed at application level:
@@ -94,4 +92,4 @@ New and updated translations are willingly accepted, and more than welcome. Just
 
 ---
 P. Wieser
-- Last updated on 2023, Sept. 12th
+- Last updated on 2023, Sep. 18th
