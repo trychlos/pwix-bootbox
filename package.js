@@ -27,7 +27,7 @@ function configure( api ){
     api.use( 'blaze-html-templates@2.0.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:modal@1.7.0' );
+    api.use( 'pwix:modal@1.8.0' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
 }
 
