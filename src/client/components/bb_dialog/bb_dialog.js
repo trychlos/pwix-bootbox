@@ -131,21 +131,8 @@ Template.bb_dialog.events({
     // when clicking on the button, call the callback if any
     'md-click .bb-dialog'( event, instance, data ){
         //console.debug( event, data, this );
-        if( this.bootbox === Bootbox.C.Calling.CONFIRM ){
-            if( this.cb ){
-                this.cb( data.button.parms.result );
-            }
-        }
-    },
-
-    // alert Bootbox has a single button, but may also be closed via the header cross close button
-    //  so we consider that close is same than acknowledge in this case
-    'md-close .bb-dialog'( event, instance ){
-        //console.debug( event );
-        if( Template.currentData().bootbox === Bootbox.C.Calling.ALERT ){
-            if( Template.currentData().cb ){
-                Template.currentData().cb();
-            }
+        if( this.cb ){
+            this.cb( data.button.parms.result );
         }
     }
 });

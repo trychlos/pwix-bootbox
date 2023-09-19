@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Fix (and simplify) the callback call on button click
 
 ### 1.5.3
 
