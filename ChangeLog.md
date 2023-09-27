@@ -7,6 +7,7 @@
     Release date: 
 
     - Fix (and simplify) the callback call on button click
+    - Set a default button when none is specified
 
 ### 1.5.3
 
