@@ -23,12 +23,12 @@ Package.onTest( function( api ){
 });
 
 function configure( api ){
-    api.versionsFrom( '2.9.0' );
-    api.use( 'blaze-html-templates@2.0.0', 'client' );
+    api.versionsFrom([ '2.9.0', '3.0-rc.0' ]);
+    api.use( 'blaze-html-templates@2.0.0 || 3.0.0-alpha300.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:modal@1.8.0' );
-    api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
+    api.use( 'pwix:modal@1.10.0' );
+    api.use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
 }
 
 // NPM dependencies are checked in /src/server/js/check_npms.js
