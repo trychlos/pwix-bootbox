@@ -3,7 +3,6 @@
  */
 
 import { Modal } from 'meteor/pwix:modal';
-import { pwixI18n } from 'meteor/pwix:i18n';
 
 import '../../../common/js/index.js';
 
