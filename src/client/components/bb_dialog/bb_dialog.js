@@ -103,9 +103,9 @@ Template.bb_dialog.onRendered( function(){
     switch( Template.currentData().bootbox ){
         case Bootbox.C.Calling.ALERT:
             if( Template.currentData().btn ){
-                Modal.set({ buttons: { id: Modal.C.Button.OK, label: Template.currentData().btn }});    
+                Modal.set({ buttons: { id: Modal.C.Button.OK, label: Template.currentData().btn }});
             } else {
-                Modal.set({ buttons: Modal.C.Button.OK });    
+                Modal.set({ buttons: Modal.C.Button.OK });
             }
             break;
         case Bootbox.C.Calling.CONFIRM:
