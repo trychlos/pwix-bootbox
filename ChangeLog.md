@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.6-rc
+### 1.5.6
 
-    Release date: 
+    Release date: 2024- 7-10
 
     - Update pwix:modal dependency
 
@@ -89,4 +89,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, May. 25th
+- Last updated on 2024, Jul. 10th
