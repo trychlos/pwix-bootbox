@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.7-rc
+### 1.5.7
 
-    Release date: 
+    Release date: 2024-10- 4
 
     - 
 
@@ -95,4 +95,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 10th
+- Last updated on 2024, Oct. 4th
