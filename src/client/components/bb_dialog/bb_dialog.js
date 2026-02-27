@@ -131,7 +131,6 @@ Template.bb_dialog.helpers({
 Template.bb_dialog.events({
     // when clicking on the button, call the callback if any
     'md-click .bb-dialog'( event, instance, data ){
-        //console.debug( event, data, this );
         if( this.cb ){
             this.cb( data.button.parms.result );
         }

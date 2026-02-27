@@ -2,11 +2,14 @@
  * pwix:bootbox/src/client/js/bootbox.js
  */
 
+import { Logger } from 'meteor/pwix:logger';
 import { Modal } from 'meteor/pwix:modal';
 
 import _ from 'lodash';
 
 import '../components/bb_dialog/bb_dialog.js';
+
+const logger = Logger.get();
 
 /**
  * Display a message with a single button to acknowledge the dialog
@@ -20,7 +23,7 @@ import '../components/bb_dialog/bb_dialog.js';
  *  - cb: a function called when the user clicks the 'OK' button
  */
 Bootbox.alert = function(){
-    //console.log( 'bb.alert()', arguments );
+    //logger.log( 'bb.alert()', arguments );
     if( arguments.length >= 1 ){
         let args = {};
         if( _.isString( arguments[0] )){
@@ -35,7 +38,7 @@ Bootbox.alert = function(){
             ...args
         });
     } else {
-        console.error( 'pwix:bootbox/alert() expects (at least) one argument' );
+        logger.error( 'pwix:bootbox/alert() expects (at least) one argument' );
     }
 };
 
@@ -60,7 +63,7 @@ Bootbox.alert = function(){
  * @param {Functions} cb a callback function which will be invoked with a boolean true if OK, or false if Cancel
  */
 Bootbox.confirm = function(){
-    //console.debug( arguments );
+    //logger.debug( arguments );
     if( arguments.length >= 2 ){
         let args = {};
         if( _.isString( arguments[0] )){
@@ -76,6 +79,6 @@ Bootbox.confirm = function(){
             ...args
         });
     } else {
-        console.error( 'pwix:bootbox/confirm() expects two arguments' );
+        logger.error( 'pwix:bootbox/confirm() expects two arguments' );
     }
 };

@@ -2,11 +2,11 @@
 
 ## ChangeLog
 
-### 1.5.8-rc
+### 1.6.0-rc
 
     Release date: 
 
-    - 
+    - Use pwix:logger universal logger, thus bumping minor candidate version number
 
 ### 1.5.7
 
