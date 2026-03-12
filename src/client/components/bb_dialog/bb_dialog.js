@@ -95,21 +95,22 @@ Template.bb_dialog.onCreated( function(){
 
 Template.bb_dialog.onRendered( function(){
     const self = this;
+    const modal = Modal.topmost();
 
     // set the events target
-    Modal.set({ target: self.$(' .bb-dialog' ) });
+    modal.set({ target: self.$(' .bb-dialog' ) });
 
     // set the buttons
     switch( Template.currentData().bootbox ){
         case Bootbox.C.Calling.ALERT:
             if( Template.currentData().btn ){
-                Modal.set({ buttons: { id: Modal.C.Button.OK, label: Template.currentData().btn }});
+                modal.set({ buttons: { id: Modal.C.Button.OK, label: Template.currentData().btn }});
             } else {
-                Modal.set({ buttons: Modal.C.Button.OK });
+                modal.set({ buttons: Modal.C.Button.OK });
             }
             break;
         case Bootbox.C.Calling.CONFIRM:
-            Modal.set({ buttons: [
+            modal.set({ buttons: [
                 self.BB.button( 'false' ),
                 self.BB.button( 'true' ),
             ]});
@@ -118,7 +119,7 @@ Template.bb_dialog.onRendered( function(){
 
     // set the title
     self.autorun(() => {
-        Modal.set({ title: Template.currentData().title || '' });
+        modal.set({ title: Template.currentData().title || '' });
     });
 });
 

@@ -7,6 +7,7 @@
     Release date: 
 
     - Use pwix:logger universal logger, thus bumping minor candidate version number
+    - Update to pwix:modal v2.5
 
 ### 1.5.7
 
