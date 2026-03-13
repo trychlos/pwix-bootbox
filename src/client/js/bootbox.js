@@ -34,6 +34,7 @@ Bootbox.alert = function(){
         Modal.run({
             mdBody: 'bb_dialog',
             mdCloseByBackdrop: false,
+            mdPosition: Bootbox.configure().position,
             bootbox: Bootbox.C.Calling.ALERT,
             ...args
         });
@@ -75,6 +76,7 @@ Bootbox.confirm = function(){
         Modal.run({
             mdBody: 'bb_dialog',
             mdCloseByBackdrop: false,
+            mdPosition: Bootbox.configure().position,
             bootbox: Bootbox.C.Calling.CONFIRM,
             ...args
         });

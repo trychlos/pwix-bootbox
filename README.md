@@ -12,7 +12,7 @@ Thanks to the [pwix:modal](https://github.com/trychlos/pwix-modal/) package, the
 
 ## Usage
 
-```
+```js
     import { Bootbox } from 'meteor/pwix:bootbox';
 
     alert()
@@ -66,9 +66,57 @@ Thanks to the [pwix:modal](https://github.com/trychlos/pwix-modal/) package, the
 
 Note that provided arguments are directly passed to `Modal.run()` method. You may so configure the opened modal as you want. See the `pwix:modal` documentation.
 
+## What does it provide ?
+
+### `Bootbox`
+
+A globally exported object with following properties:
+
+#### Methods
+
+##### `Bootbox.alert()`
+
+##### `Bootbox.configure()`
+
+See [below](#configuration).
+
+##### `Bootbox.confirm()`
+
 ## Configuration
 
-None at the moment.
+The package's behavior can be configured through a call to the `Bootbox.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
+
+Known configuration options are:
+
+- `position`
+
+    The default positionning of the dialog boxes.
+
+    See `pwix:modal` for the possible values.
+
+    Defaults to `Modal.C.Position.AUTO`.
+
+- `verbosity`
+
+    Define the expected verbosity level.
+
+    The accepted value can be any or-ed combination of following:
+
+    - `Forms.C.Verbose.NONE`
+
+        Do not display any trace log to the console
+
+    - `Forms.C.Verbose.CONFIGURE`
+
+        Trace `Forms.configure()` calls and their result
+
+        this is the default value.
+
+Please note that `Bootbox.configure()` method should be called in the same terms both in client and server sides.
+
+Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `Bootbox.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+
+`Bootbox.configure()` is a reactive data source.
 
 ## NPM peer dependencies
 
@@ -77,11 +125,13 @@ Starting with v 1.1.0, and in accordance with advices from [the Meteor Guide](ht
 Instead we check npm versions of installed packages at runtime, on server startup, in development environment.
 
 Dependencies as of v 1.5.0:
-```
+
+```js
     'lodash': '^4.17.21'
 ```
 
 Each of these dependencies should be installed at application level:
+
 ```
     meteor npm install <package> --save
 ```

@@ -8,6 +8,7 @@
 
     - Use pwix:logger universal logger, thus bumping minor candidate version number
     - Update to pwix:modal v2.5
+    - Let the application choose default Bootbox positionning, thus introducing a configure() function
 
 ### 1.5.7
 

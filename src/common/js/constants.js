@@ -17,6 +17,12 @@ Bootbox.C = {
         OKCANCEL: 'OKCANCEL',
         OKCLOSE: 'OKCLOSE',
         YESNO: 'YESNO'
+    },
+
+    // verbosity levels
+    Verbose: {
+        NONE:      0,
+        CONFIGURE: 0x01 <<  0
     }
 };
 
