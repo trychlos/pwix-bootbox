@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.6.0-rc
+### 1.6.0
 
-    Release date: 
+    Release date: 2026- 4- 2
 
     - Use pwix:logger universal logger, thus bumping minor candidate version number
     - Update to pwix:modal v2.5
@@ -103,4 +103,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Oct. 4th
+- Last updated on 2026, Apr. 2nd
